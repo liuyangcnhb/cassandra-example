@@ -1,0 +1,12 @@
+*.iml
+.idea/
+.mvn/
+mvnw*
+out/
+META-INF/
+target/
+HELP.md
+william*
+*.yml
+*.ipr
+*.iws
