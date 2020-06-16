@@ -1,9 +1,10 @@
-package com.sinodata.example.cassandra.service;
+package com.sinodata.example.cassandra.service.impl;
 
 import com.datastax.oss.driver.api.core.ConsistencyLevel;
 import com.sinodata.example.cassandra.entity.Lottery;
 import com.sinodata.example.cassandra.entity.requset.InsertTest;
 import com.sinodata.example.cassandra.repository.LotteryRepository;
+import com.sinodata.example.cassandra.service.LotteryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.cassandra.core.WriteResult;
 import org.springframework.stereotype.Service;
@@ -19,7 +20,7 @@ import java.util.List;
  * <author>     <time>      <version>       <desc>
  */
 @Service
-public class LotteryServiceImpl implements LotteryService{
+public class LotteryServiceImpl implements LotteryService {
     @Autowired
     private LotteryRepository lotteryRepository;
 

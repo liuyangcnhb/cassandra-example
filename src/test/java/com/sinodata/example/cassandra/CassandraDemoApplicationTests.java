@@ -4,8 +4,11 @@ import com.datastax.oss.driver.api.core.ConsistencyLevel;
 import com.sinodata.example.cassandra.entity.Lottery;
 import com.sinodata.example.cassandra.repository.LotteryRepository;
 import com.sinodata.example.cassandra.service.LotteryService;
-import com.sinodata.example.cassandra.utils.RedisTool;
+import com.sun.org.apache.xpath.internal.operations.Bool;
 import org.junit.jupiter.api.Test;
+import org.redisson.api.RLock;
+import org.redisson.api.RedissonClient;
+import org.redisson.client.RedisClient;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.data.cassandra.core.WriteResult;
@@ -14,6 +17,7 @@ import org.springframework.data.redis.core.RedisTemplate;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 
 @SpringBootTest
@@ -29,17 +33,23 @@ class CassandraDemoApplicationTests {
 	private CqlTemplate cqlTemplate;
 
 	@Autowired
-	private RedisTemplate<String, String> redisTemplate;
+	private RedissonClient redissonClient;
 
 	@Test
 	void contextLoads() {
 
-		String key = "test";
-		String value = "testValue";
-		Boolean result = RedisTool.tryGetDistributedLock(redisTemplate, key, value, 200000);
-		Boolean result2 = RedisTool.tryGetDistributedLock(redisTemplate, key, value, 300);
-		RedisTool.releaseDistributedLock(redisTemplate, key, value);
-		result2 = RedisTool.tryGetDistributedLock(redisTemplate, key, value, 1000);
+//		String key = "test";
+//		RLock rLock = redissonClient.getLock(key);
+//		try{
+//			rLock.lock(20000, TimeUnit.MILLISECONDS);
+//			Boolean result2 = rLock.tryLock(20000, TimeUnit.MILLISECONDS);
+//			rLock.unlock();
+//			result2 = rLock.tryLock(2000, TimeUnit.MILLISECONDS);
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//			rLock.unlock();
+//		}
+
 		//repeatInsertTest(100, ConsistencyLevel.ONE);
 	}
 

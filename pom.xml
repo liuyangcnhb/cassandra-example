@@ -95,10 +95,11 @@
 			<version>${knife4j.version}</version>
 		</dependency>
 
-		<!-- Spring Boot Redis 依赖 -->
+		<!-- Spring Boot Redission 依赖 -->
 		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-data-redis</artifactId>
+			<groupId>org.redisson</groupId>
+			<artifactId>redisson-spring-boot-starter</artifactId>
+			<version>3.13.1</version>
 		</dependency>
 
 	</dependencies>
