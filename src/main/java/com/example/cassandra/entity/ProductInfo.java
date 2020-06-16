@@ -1,4 +1,4 @@
-package com.sinodata.example.cassandra.entity;
+package com.example.cassandra.entity;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -10,18 +10,18 @@ import org.springframework.data.cassandra.core.mapping.Table;
 import java.io.Serializable;
 
 /**
- * FileName: WinInfo
+ * FileName: ProductInfo
  * Author:  liuyang
  * Date:    2020/6/169:08
- * Description: 彩票中奖信息
+ * Description: 商品信息
  * History:
  * <author>     <time>      <version>       <desc>
  */
 
 @Data
 @NoArgsConstructor
-@Table("win_info")
-public class WinInfo implements Serializable {
+@Table("product_info")
+public class ProductInfo implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
@@ -56,7 +56,7 @@ public class WinInfo implements Serializable {
     private String winMessage;
 
 
-    public WinInfo(String projCode, String prodBatchCode, String winHead, String winTail, String winMessage){
+    public ProductInfo(String projCode, String prodBatchCode, String winHead, String winTail, String winMessage){
         this.projCode = projCode;
         this.prodBatchCode = prodBatchCode;
         this.winHead = winHead;

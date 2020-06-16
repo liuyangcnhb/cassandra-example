@@ -22,7 +22,7 @@ singleServerConfig:
   # 客户端名称
   clientName: null
   # 节点地址
-  address: redis://10.6.136.80:6379
+  address: redis://10.6.xxx.xxx:6379
   # 发布和订阅连接的最小空闲连接数
   subscriptionConnectionMinimumIdleSize: 1
   # 发布和订阅连接池大小

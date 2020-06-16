@@ -10,9 +10,9 @@ spring:
   data:
     cassandra:
       keyspaceName: pl
-      contactPoints: 10.6.136.83, 10.6.136.116, 10.6.136.117
+      contactPoints: 10.6.xxx
       port: 9042
-      entityBasePackages: com.sinodata.example.cassandra.entity
+      entityBasePackages: com.example.cassandra.entity
       localDataCenter: datacenter1
 
   redis:

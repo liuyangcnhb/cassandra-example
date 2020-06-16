@@ -1,8 +1,7 @@
-package com.sinodata.example.cassandra;
+package com.example.cassandra;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.scheduling.annotation.EnableAsync;
 
 @SpringBootApplication
 public class CassandraDemoApplication {

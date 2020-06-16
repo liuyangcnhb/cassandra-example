@@ -1,15 +1,10 @@
-package com.sinodata.example.cassandra.config;
+package com.example.cassandra.config;
 
 import com.datastax.oss.driver.api.core.CqlSession;
 import com.datastax.oss.driver.api.core.session.Session;
-import io.swagger.annotations.ApiModel;
-import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.autoconfigure.cassandra.CassandraProperties;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.cassandra.config.AbstractCassandraConfiguration;
-import org.springframework.data.cassandra.config.SchemaAction;
 import org.springframework.data.cassandra.core.AsyncCassandraTemplate;
 
 /**
@@ -31,7 +26,7 @@ public class CassandraConfig extends AbstractCassandraConfiguration {
 
     @Override
     protected String getContactPoints() {
-        return "10.6.136.83";
+        return "10.6.xxx.xxx";
     }
 
     @Override

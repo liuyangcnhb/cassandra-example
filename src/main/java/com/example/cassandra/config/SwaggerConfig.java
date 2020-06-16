@@ -1,4 +1,4 @@
-package com.sinodata.example.cassandra.config;
+package com.example.cassandra.config;
 
 import com.github.xiaoymin.knife4j.spring.annotations.EnableKnife4j;
 import org.springframework.context.annotation.Bean;
