@@ -45,14 +45,12 @@ public class ProductInfoServiceImpl implements ProductInfoService {
 //            }
 //        }
         Observable.range(productInfoRequest.getBeginWinHead(), productInfoRequest.getEndWinHead())
-                .flatMap(winHead -> {
-                    return Observable.range(productInfoRequest.getBeginWinTail(), productInfoRequest.getEndWinTail())
-                            .map(winTail -> {
-                                return new ProductInfo(productInfoRequest.getProjCode(), productInfoRequest.getProdBatchCode(), String.format("%07d", winHead), String.format("%03d", winTail), String.format("%d等奖", winTail));
-                            })
-                            .toList()
-                            .toObservable();
-                })
+                .flatMap(winHead -> Observable.range(productInfoRequest.getBeginWinTail(), productInfoRequest.getEndWinTail())
+                        .map(winTail -> {
+                            return new ProductInfo(productInfoRequest.getProjCode(), productInfoRequest.getProdBatchCode(), String.format("%07d", winHead), String.format("%03d", winTail), String.format("%d等奖", winTail));
+                        })
+                        .toList()
+                        .toObservable())
                 .subscribe(productInfo -> cassandraTemplate.insert(productInfo, options), exception -> System.out.println(exception.toString()));
 
     }
